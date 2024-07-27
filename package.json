@@ -1,8 +1,8 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "index.js",
-  "description": "Helpers library for ecommerce-microservice-app",
+  "description": "Helpers library for ecommerce_microservice_app",
   "engines": {
     "node": ">=20"
   },
@@ -18,11 +18,11 @@
     "trailingComma": "es5"
   },
   "keywords": [],
-  "name": "ecommerce-microservice-app-shared",
+  "name": "@mitra-tech/ecommerce_microservice_app",
   "author": "Mitra Davoudi",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mitra-tech/Ecommerce-Microservice-App.git"
+    "url": "git+https://github.com/mitra-tech/ecommerce_microservice_app.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -61,3 +61,4 @@
     "winston-elasticsearch": "^0.19.0"
   }
 }
+
