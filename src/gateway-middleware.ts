@@ -6,7 +6,7 @@ const tokens: string[] = ['auth', 'seller', 'gig', 'search', 'buyer', 'message',
 
 export function verifyGatewayREquest(req: Request, res: Response, next: NextFunction) : void {
 
-  if (!req.headers?.gatewayToken) {
+  if (!req.headers?.gatewaytoken) {
     throw new NotAuthorizeError('Invalid request!', 'The request is not coming from API gateway!')
   };
 
@@ -17,7 +17,7 @@ export function verifyGatewayREquest(req: Request, res: Response, next: NextFunc
   };
 
   try {
-    const payload: {id: string, iat: number} = JWT.verify(token, '') as {id: string, iat: number};
+    const payload: {id: string, iat: number} = JWT.verify(token, 'b6b97001cb1d3beb25f1d9726c7546e2') as {id: string, iat: number};
 
     if(!tokens.includes(payload.id)) {
       throw new NotAuthorizeError('Invalid request!', 'The request has an invalid payload!');
@@ -25,4 +25,5 @@ export function verifyGatewayREquest(req: Request, res: Response, next: NextFunc
   } catch (error) {
       throw new NotAuthorizeError('Invalid request!', 'The request is not coming from API gateway!')
   };
+  next();
 }
