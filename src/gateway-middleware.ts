@@ -10,7 +10,7 @@ export function verifyGatewayREquest(req: Request, res: Response, next: NextFunc
     throw new NotAuthorizeError('Invalid request!', 'The request is not coming from API gateway!')
   };
 
-  const token : string = req.headers?.gatewayToken as string;
+  const token : string = req.headers?.gatewaytoken as string;
 
   if (!token) {
     throw new NotAuthorizeError('Invalid request!', 'The request is not coming from API gateway!')
